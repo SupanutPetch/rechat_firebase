@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rechat_firebase/controller/login_controller.dart';
-import 'package:awesome_dialog/awesome_dialog.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -26,13 +25,14 @@ class LoginPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Center(
-                    child: Text("Login Page",
+                    child: Text("select Login",
                         style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 22,
                             color: Colors.white)),
                   ),
                   googleButton(context),
+                  userLogin()
                 ],
               ),
             ),
@@ -70,5 +70,34 @@ class LoginPage extends StatelessWidget {
               ],
             ),
             onPressed: () => loginController.login(context)));
+  }
+
+  Widget userLogin() {
+    return Container(
+        height: 54,
+        margin: const EdgeInsets.all(15),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          color: Colors.white,
+        ),
+        child: TextButton(
+            style: ButtonStyle(
+                shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)))),
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.mail),
+                SizedBox(
+                  width: 5,
+                ),
+                Text("email & password",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w800)),
+              ],
+            ),
+            onPressed: () {}));
   }
 }

@@ -4,10 +4,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:rechat_firebase/view/home_page.dart';
+import 'package:rechat_firebase/view/manu_page.dart';
+
+import '../model/user.dart';
+import '../view/widget.dart';
 
 class LoginController extends GetxController {
-  List<User> user = [];
+  List<GoogleUser> user = [];
   GoogleSignInAccount? googleUser;
   GoogleSignInAuthentication? googleAuth;
   FirebaseAuth auth = FirebaseAuth.instance;
@@ -21,14 +24,8 @@ class LoginController extends GetxController {
       idToken: googleAuth?.idToken,
     );
     await FirebaseAuth.instance.signInWithCredential(credential);
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      content: Text(
-        "Wellcome ${googleUser!.displayName}",
-        style: const TextStyle(fontWeight: FontWeight.w800),
-      ),
-      backgroundColor: Colors.lightGreen,
-    ));
-    Get.to(HomePage());
+    Show.snackBar("ยินดีต้อนรับ ${googleUser!.displayName}");
+    Get.to(MenuBarPage());
   }
 
   logout(BuildContext context) {

@@ -1,4 +1,4 @@
-class User {
+class GoogleUser {
   String? user;
   String? fname;
   String? lname;

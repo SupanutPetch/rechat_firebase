@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:rechat_firebase/controller/login_controller.dart';
 
@@ -26,11 +27,37 @@ class HomePage extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-          child: Center(
-        child: Text(
-          "Welcome !! ${loginController.googleUser!.displayName}".tr,
-          style: const TextStyle(fontSize: 20, color: Colors.white),
-        ),
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+                width: 95,
+                height: 95,
+                padding: const EdgeInsets.all(2),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(width: 3, color: Colors.white)),
+                child: (loginController.googleUser!.photoUrl != null)
+                    ? CircleAvatar(
+                        backgroundColor: Colors.indigo[300],
+                        foregroundImage: NetworkImage(
+                            loginController.googleUser!.photoUrl ?? ""),
+                      )
+                    : const Icon(
+                        FontAwesomeIcons.user,
+                        size: 50,
+                        color: Colors.white,
+                      )),
+          ),
+          Center(
+            child: Text(
+              "Welcome !! ${loginController.googleUser!.displayName}".tr,
+              style: const TextStyle(fontSize: 20, color: Colors.white),
+            ),
+          ),
+        ],
       )),
     );
   }
