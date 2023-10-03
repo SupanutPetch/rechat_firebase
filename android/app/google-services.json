@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1024940266281",
+    "project_id": "rechatapp-ea29e",
+    "storage_bucket": "rechatapp-ea29e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024940266281:android:b0fe8df45ea89fc408dd38",
+        "android_client_info": {
+          "package_name": "com.example.rechat_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024940266281-1n9kvhu7tpj9jefrkhubcsfh5qc49rd2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rechat_firebase",
+            "certificate_hash": "acee392446547751b08d1e1abacc7ff642173106"
+          }
+        },
+        {
+          "client_id": "1024940266281-bpomu3s7ga973vom6sqs1o5fvoevkopt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDK3n2fWGMqwYRW_ML1Pz2btbeBS_bybM4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1024940266281-bpomu3s7ga973vom6sqs1o5fvoevkopt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1024940266281-n1hp3pknl1uolelfcgis5m687oh1dl7q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.rechatFirebase"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
