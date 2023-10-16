@@ -7,6 +7,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:rechat_firebase/view/manu_page.dart';
 
 import '../model/user.dart';
+import '../view/home_page.dart';
 import '../view/widget.dart';
 
 class LoginController extends GetxController {
@@ -25,7 +26,7 @@ class LoginController extends GetxController {
     );
     await FirebaseAuth.instance.signInWithCredential(credential);
     Show.snackBar("ยินดีต้อนรับ ${googleUser!.displayName}");
-    Get.to(MenuBarPage());
+    Get.to(HomePage());
   }
 
   logout(BuildContext context) {
